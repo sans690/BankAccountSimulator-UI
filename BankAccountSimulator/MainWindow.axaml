@@ -4,21 +4,44 @@
     Width="800" Height="450"
     Title="BankAccountSimulator">
 
-    <StackPanel Spacing="10"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center">
+    <Grid>
+        <StackPanel Name="LoginPanel" Spacing="10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
 
-        <TextBlock>Card Number</TextBlock>
-        <TextBox Name="cardNumber" />
-        <TextBlock>Card Pin</TextBlock>
-        <TextBox Name="cardPin" />
+            <TextBlock HorizontalAlignment="Center">Card Number</TextBlock>
+            <TextBox Name="cardNumber" />
+            <TextBlock HorizontalAlignment="Center">Card Pin</TextBlock>
+            <TextBox Name="cardPin" />
+            <TextBlock Name="resultText" />
+            <Button Content="Submit" Click="HandleSignInClick"
+                Name="submitButton" HorizontalAlignment="Center" />
+        </StackPanel>
 
-        <TextBlock Name="resultText1" />
-        <TextBlock Name="resultText2" />
+        <StackPanel Name="DashboardPanel" IsVisible="False" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top">
+                Welcome!</TextBlock>
 
-        <Button Content="Submit" Click="HandleSignInClick"
-            Name="submitButton" />
+            <StackPanel Margin="0, 40, 0, 0">
+                <TextBlock>1. Check Balance</TextBlock>
+                <TextBlock>2. Withdraw</TextBlock>
+                <TextBlock>3. Deposit</TextBlock>
+            </StackPanel>
 
-    </StackPanel>
-
+            <Grid RowSpacing="10" ColumnSpacing="10" ColumnDefinitions="*,*,*"
+                RowDefinitions="Auto, Auto, Auto, Auto"
+                VerticalAlignment="Bottom" Margin="0, 50, 0, 0">
+                <Button Grid.Row="0" Grid.Column="0">1</Button>
+                <Button Grid.Row="0" Grid.Column="1">2</Button>
+                <Button Grid.Row="0" Grid.Column="2">3</Button>
+                <Button Grid.Row="1" Grid.Column="0">4</Button>
+                <Button Grid.Row="1" Grid.Column="1">5</Button>
+                <Button Grid.Row="1" Grid.Column="2">6</Button>
+                <Button Grid.Row="2" Grid.Column="0">7</Button>
+                <Button Grid.Row="2" Grid.Column="1">8</Button>
+                <Button Grid.Row="2" Grid.Column="2">9</Button>
+                <Button Grid.Row="4" Grid.Column="1">0</Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
 </Window>
