@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -5,6 +6,12 @@ namespace BankAccountSimulator;
 
 public partial class MainWindow : Window
 {
+    List<User> users = new List<User>
+    {
+        new User("Larry", "Smith", "1", "111", "100"),
+        new User("Ben", "Jackson", "2", "222", "50")
+    };
+
     public MainWindow()
     {
         InitializeComponent();
@@ -14,10 +21,51 @@ public partial class MainWindow : Window
     {
         var cardNumberInput = this.FindControl<TextBox>("cardNumber");
         var cardPinInput = this.FindControl<TextBox>("cardPin");
-        var result1 = this.FindControl<TextBlock>("resultText1");
-        var result2 = this.FindControl<TextBlock>("resultText2");
+        var result = this.FindControl<TextBlock>("resultText");
 
-        result1?.Text = cardNumberInput?.Text;
-        result2?.Text = cardPinInput?.Text;
+        var loginPanel = this.FindControl<StackPanel>("LoginPanel");
+        var dashboardPanel = this.FindControl<StackPanel>("DashboardPanel");
+
+        if (cardNumberInput == null || cardPinInput == null || resultText == null || loginPanel == null || dashboardPanel == null)
+        {
+            return;
+        }
+
+        string? card = cardNumberInput.Text;
+        string? pin = cardPinInput.Text;
+
+        bool isValid = false;
+
+        foreach (User u in users)
+        {
+            if (u.cardNumber == card && u.cardPin == pin)
+            {
+                isValid = true;
+                break;
+            }
+        }
+
+        if (isValid)
+        {
+            loginPanel.IsVisible = false;
+            dashboardPanel.IsVisible = true;
+        }
+
+        else
+        {
+            result?.Text = "Invalid login";
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
