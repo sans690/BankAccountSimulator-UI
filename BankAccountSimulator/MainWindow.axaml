@@ -4,7 +4,21 @@
     Width="800" Height="450"
     Title="BankAccountSimulator">
 
-    <TextBlock Text="Welcome Bank Account Simulator!"
+    <StackPanel Spacing="10"
         HorizontalAlignment="Center"
-        VerticalAlignment="Center" />
+        VerticalAlignment="Center">
+
+        <TextBlock>Card Number</TextBlock>
+        <TextBox Name="cardNumber" />
+        <TextBlock>Card Pin</TextBlock>
+        <TextBox Name="cardPin" />
+
+        <TextBlock Name="resultText1" />
+        <TextBlock Name="resultText2" />
+
+        <Button Content="Submit" Click="HandleSignInClick"
+            Name="submitButton" />
+
+    </StackPanel>
+
 </Window>
