@@ -17,6 +17,16 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
+    public void HandleNumbersClick()
+    {
+
+    }
+
+    public void HandleSubmitClick()
+    {
+
+    }
+
     public void HandleSignInClick(object? sender, RoutedEventArgs e)
     {
         var cardNumberInput = this.FindControl<TextBox>("cardNumber");
