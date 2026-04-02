@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "Avalonia"
-    ]
+    ],
+    "cmake.enabled": false,
+    "cmake.configureOnOpen": false,
+    "cmake.ignoreCMakeListsMissing": true
 }
