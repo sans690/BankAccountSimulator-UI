@@ -28,3 +28,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/saniyahsmith/BankAccountSimulator+UI/BankAccountSimulator/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/saniyahsmith/BankAccountSimulator+UI/BankAccountSimulator/NumberPad.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
